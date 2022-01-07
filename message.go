@@ -35,9 +35,11 @@ func NewMessage(v []byte) *Message {
 		Value:      []rune(string(utf8V)),
 		Delimeters: *NewDelimeters(),
 	}
-	if err := newMessage.parse(); err != nil {
-		log.Fatal(fmt.Sprintf("Parse Error: %+v", err))
-	}
+	//Why is this parsing an empty message? It failes because the message is empty.
+	//if err := newMessage.parse(); err != nil {
+	//	log.Fatal(fmt.Sprintf("Parse Error: %+v", err))
+	//}
+	
 	return newMessage
 }
 
